@@ -1,0 +1,50 @@
+{
+    "name": "schulzefelix/laravel-bigquery",
+    "type": "library",
+    "description": "",
+    "keywords": [
+        "laravel"
+    ],
+    "homepage": "https://github.com/schulzefelix/laravel-bigquery",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Schulze",
+            "email": "github@schulze.co",
+            "homepage": "https://schulze.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "illuminate/support": "~5.1",
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^6.1",
+        "mockery/mockery": "^0.9.5",
+        "orchestra/testbench" : "~3.4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "SchulzeFelix\\BigQuery\\": "src"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "SchulzeFelix\\BigQuery\\BigQueryServiceProvider"
+            ],
+            "aliases":{
+                "BigQuery": "SchulzeFelix\\BigQuery\\FacadeClass"
+            }
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SchulzeFelix\\BigQuery\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

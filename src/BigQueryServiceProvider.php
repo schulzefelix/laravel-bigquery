@@ -2,8 +2,8 @@
 
 namespace SchulzeFelix\BigQuery;
 
-use Google\Cloud\BigQuery\BigQueryClient;
 use Illuminate\Support\ServiceProvider;
+use Google\Cloud\BigQuery\BigQueryClient;
 use SchulzeFelix\BigQuery\Exceptions\InvalidConfiguration;
 
 class BigQueryServiceProvider extends ServiceProvider
@@ -33,11 +33,11 @@ class BigQueryServiceProvider extends ServiceProvider
 
         $this->app->bind(BigQueryClient::class, function () use ($bigQueryConfig) {
             $this->guardAgainstInvalidConfiguration($bigQueryConfig);
+
             return BigQueryClientFactory::createForConfig($bigQueryConfig);
         });
 
         $this->app->alias(BigQueryClient::class, 'bigquery');
-
     }
 
     protected function guardAgainstInvalidConfiguration(array $bigQueryConfig = null)
@@ -45,7 +45,5 @@ class BigQueryServiceProvider extends ServiceProvider
         if (! file_exists($bigQueryConfig['application_credentials'])) {
             throw InvalidConfiguration::credentialsJsonDoesNotExist($bigQueryConfig['application_credentials']);
         }
-
     }
-
 }

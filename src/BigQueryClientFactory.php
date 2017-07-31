@@ -12,7 +12,7 @@ class BigQueryClientFactory
         $clientConfig = array_merge([
             'projectId' => $bigQueryConfig['project_id'],
             'keyFilePath' => $bigQueryConfig['application_credentials'],
-            'authCache' => self::configureCache($bigQueryConfig['auth_cache_store'])
+            'authCache' => self::configureCache($bigQueryConfig['auth_cache_store']),
         ], array_get($bigQueryConfig, 'client_options', []));
 
         return new BigQueryClient($clientConfig);

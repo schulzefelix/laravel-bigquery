@@ -3,8 +3,8 @@
 namespace SchulzeFelix\BigQuery\Tests\Integration;
 
 use SchulzeFelix\BigQuery\BigQueryFacade;
-use SchulzeFelix\BigQuery\BigQueryServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use SchulzeFelix\BigQuery\BigQueryServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

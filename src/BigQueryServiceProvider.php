@@ -4,6 +4,8 @@ namespace SchulzeFelix\BigQuery;
 
 use Illuminate\Support\ServiceProvider;
 use Google\Cloud\BigQuery\BigQueryClient;
+use Laravel\Lumen\Application as LumenApplication;
+use Illuminate\Foundation\Application as LaravelApplication;
 use SchulzeFelix\BigQuery\Exceptions\InvalidConfiguration;
 
 class BigQueryServiceProvider extends ServiceProvider
@@ -15,9 +17,7 @@ class BigQueryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/config/bigquery.php' => config_path('bigquery.php'),
-        ]);
+        $this->setupConfig();
     }
 
     /**
@@ -45,5 +45,18 @@ class BigQueryServiceProvider extends ServiceProvider
         if (! file_exists($bigQueryConfig['application_credentials'])) {
             throw InvalidConfiguration::credentialsJsonDoesNotExist($bigQueryConfig['application_credentials']);
         }
+    }
+
+    protected function setupConfig()
+    {
+        $source = realpath(__DIR__.'/config/bigquery.php');
+
+        if ($this->app instanceof LaravelApplication) {
+            $this->publishes([$source => config_path('bigquery.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('bigquery');
+        }
+
+        $this->mergeConfigFrom($source, 'bigquery');
     }
 }

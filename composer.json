@@ -37,7 +37,7 @@
                 "SchulzeFelix\\BigQuery\\BigQueryServiceProvider"
             ],
             "aliases":{
-                "BigQuery": "SchulzeFelix\\BigQuery\\FacadeClass"
+                "BigQuery": "SchulzeFelix\\BigQuery\\BigQueryFacade"
             }
         }
     },

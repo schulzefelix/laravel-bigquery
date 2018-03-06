@@ -2,9 +2,12 @@
 
 All Notable changes to `laravel-bigquery` will be documented in this file.
 
-## [1.0.0] - 2018-03-06
+## [1.1.0] - 2018-03-06
  - Add Compatibility With Laravel 5.6
  - Updated Google Cloud BigQuery Package To v1
+
+## [1.0.0] - 2017-10-06
+ - First Stable Release
 
 ## [0.1.0] - 2017-09-07
  - add compatibility with Laravel 5.5

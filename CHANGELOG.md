@@ -1,6 +1,12 @@
 # Changelog
 
 All Notable changes to `laravel-bigquery` will be documented in this file.
+## [1.2.0] - 2019-09-15
+- add support for Laravel 6
+- use Symfony's PSR-16 cache adapter
+- drop Support for Lumen
+- 
+
 ## [1.1.2] - 2019-09-15
  - Add Compatibility With Laravel 5.8
  - dropped support for anything lower than Laravel 5.5

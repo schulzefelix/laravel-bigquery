@@ -3,7 +3,8 @@
 namespace SchulzeFelix\BigQuery;
 
 use Google\Cloud\BigQuery\BigQueryClient;
-use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
+use Illuminate\Support\Facades\Cache;
+use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
 class BigQueryClientFactory
 {
@@ -20,9 +21,9 @@ class BigQueryClientFactory
 
     protected static function configureCache($cacheStore)
     {
-        $store = \Cache::store($cacheStore);
+        $store = Cache::store($cacheStore);
 
-        $cache = new CacheItemPool($store);
+        $cache = new Psr16Adapter($store);
 
         return $cache;
     }

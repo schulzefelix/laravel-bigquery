@@ -2,8 +2,10 @@
 
 namespace SchulzeFelix\BigQuery;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Cache;
 use Google\Cloud\BigQuery\BigQueryClient;
-use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
+use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
 class BigQueryClientFactory
 {
@@ -13,16 +15,16 @@ class BigQueryClientFactory
             'projectId' => $bigQueryConfig['project_id'],
             'keyFilePath' => $bigQueryConfig['application_credentials'],
             'authCache' => self::configureCache($bigQueryConfig['auth_cache_store']),
-        ], array_get($bigQueryConfig, 'client_options', []));
+        ], Arr::get($bigQueryConfig, 'client_options', []));
 
         return new BigQueryClient($clientConfig);
     }
 
     protected static function configureCache($cacheStore)
     {
-        $store = \Cache::store($cacheStore);
+        $store = Cache::store($cacheStore);
 
-        $cache = new CacheItemPool($store);
+        $cache = new Psr16Adapter($store);
 
         return $cache;
     }

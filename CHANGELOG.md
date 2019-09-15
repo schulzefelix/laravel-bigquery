@@ -1,6 +1,10 @@
 # Changelog
 
 All Notable changes to `laravel-bigquery` will be documented in this file.
+## [1.1.2] - 2019-09-15
+ - Add Compatibility With Laravel 5.8
+ - dropped support for anything lower than Laravel 5.5
+
 ## [1.1.1] - 2018-10-30
  - Add Compatibility With Laravel 5.7
 

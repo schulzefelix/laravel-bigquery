@@ -12,8 +12,6 @@ Using this package you can easily interact with the Google BigQuery API.
 
 ## Install
 
-> For Laravel 5.8, use version 1.1.2 of this package!
-
 This package can be installed through Composer.
 
 ``` bash

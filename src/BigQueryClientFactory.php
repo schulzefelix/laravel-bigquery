@@ -2,9 +2,9 @@
 
 namespace SchulzeFelix\BigQuery;
 
+use Google\Cloud\BigQuery\BigQueryClient;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
-use Google\Cloud\BigQuery\BigQueryClient;
 use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
 class BigQueryClientFactory

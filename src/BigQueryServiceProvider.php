@@ -2,8 +2,8 @@
 
 namespace SchulzeFelix\BigQuery;
 
-use Illuminate\Support\ServiceProvider;
 use Google\Cloud\BigQuery\BigQueryClient;
+use Illuminate\Support\ServiceProvider;
 use SchulzeFelix\BigQuery\Exceptions\InvalidConfiguration;
 
 class BigQueryServiceProvider extends ServiceProvider

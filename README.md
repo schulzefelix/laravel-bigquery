@@ -50,7 +50,7 @@ return [
     |
     | https://docs.vapor.build/1.0/projects/environments.html#secrets
     */
-    //'keyFile' => json_decode(env('GOOGLE_CLOUD_APPLICATION_CREDENTIALS'), true),
+    //'keyFile' => json_decode(trim(env('GOOGLE_CLOUD_APPLICATION_CREDENTIALS')), true),
  
     /*
     |--------------------------------------------------------------------------

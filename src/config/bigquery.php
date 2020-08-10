@@ -16,7 +16,7 @@ return [
     'application_credentials' => env('GOOGLE_CLOUD_APPLICATION_CREDENTIALS'),
 
     /*
-    | OPTIONAL: 
+    | OPTIONAL:
     | Use keyFile to use a json config from the current environment.
     | For example secrets in laravel vapor
     |

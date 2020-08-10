@@ -44,7 +44,7 @@ return [
 
 
     /*
-    | OPTIONAL: 
+    | OPTIONAL:
     | Use keyFile to use a json config from the current environment.
     | For example secrets in laravel vapor
     |

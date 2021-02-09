@@ -16,6 +16,7 @@ class BigQueryClientFactory
             'keyFilePath' => $bigQueryConfig['application_credentials'],
             'keyFile' => Arr::get($bigQueryConfig, 'keyFile', null),
             'authCache' => self::configureCache($bigQueryConfig['auth_cache_store']),
+            'location' => Arr::get($bigQueryConfig, 'location', null),
         ], Arr::get($bigQueryConfig, 'client_options', []));
 
         return new BigQueryClient($clientConfig);

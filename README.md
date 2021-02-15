@@ -91,6 +91,19 @@ return [
     'client_options' => [
         'retries' => 3, // Default
     ],
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Dataset location
+    |--------------------------------------------------------------------------
+    |
+    | Specify the dataset location.
+    |
+    | Supported values can be found at https://cloud.google.com/bigquery/docs/locations
+    |
+    */
+
+    'location' => '',
 ];
 ```
 

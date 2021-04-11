@@ -1,7 +1,7 @@
 # Changelog
 
 All Notable changes to `laravel-bigquery` will be documented in this file.
-## [1.5.0] - 2021-04-11
+## [1.4.1] - 2021-01-25
 - Add Compatibility With PHP 8
 
 ## [1.4.0] - 2020-09-14

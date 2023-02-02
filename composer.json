@@ -16,27 +16,27 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
-        "google/cloud-bigquery": "^1.0",
-        "illuminate/support": "^9.0",
+        "php": "^8.1",
+        "google/cloud-bigquery": "^1.24",
+        "illuminate/support": "^10.0",
         "symfony/cache": "^6.0"
     },
     "require-dev": {
-        "mockery/mockery": "^1.4",
-        "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.4"
+        "mockery/mockery": "^1.4.4",
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
             "SchulzeFelix\\BigQuery\\": "src"
         }
     },
-    "extra":{
-        "laravel":{
-            "providers":[
+    "extra": {
+        "laravel": {
+            "providers": [
                 "SchulzeFelix\\BigQuery\\BigQueryServiceProvider"
             ],
-            "aliases":{
+            "aliases": {
                 "BigQuery": "SchulzeFelix\\BigQuery\\BigQueryFacade"
             }
         }

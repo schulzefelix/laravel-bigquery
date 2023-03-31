@@ -15,7 +15,7 @@ Using this package you can easily interact with the Google BigQuery API.
 This package can be installed through Composer.
 
 ``` bash
-$ composer require schulzefelix/laravel-bigquery
+composer require schulzefelix/laravel-bigquery
 ```
 
 Optionally, you can publish the config file of this package with this command:
